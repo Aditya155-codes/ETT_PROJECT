@@ -52,6 +52,22 @@ ax4.set_xlabel("Reading Score")
 ax4.set_ylabel("Number of Students")
 st.pyplot(fig4)
 
+st.subheader("Writing Score Distribution")
+
+fig5, ax5 = plt.subplots()
+ax5.hist(data['writing_score'], bins=10)
+ax5.set_xlabel("Writing Score")
+ax5.set_ylabel("Number of Students")
+st.pyplot(fig5)
+
+st.subheader("Reading vs Writing Score")
+
+fig6, ax6 = plt.subplots()
+ax6.scatter(data['reading_score'], data['writing_score'])
+ax6.set_xlabel("Reading Score")
+ax6.set_ylabel("Writing Score")
+st.pyplot(fig6)
+
 st.subheader("Top Performing Students")
 
 top_students = data.sort_values(by='math_score', ascending=False).head(5)
