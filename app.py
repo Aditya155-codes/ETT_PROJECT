@@ -44,6 +44,14 @@ ax3.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle
 ax3.set_title("Gender Distribution")
 st.pyplot(fig3)
 
+st.subheader("Reading Score Distribution")
+
+fig4, ax4 = plt.subplots()
+ax4.hist(data['reading_score'], bins=10)
+ax4.set_xlabel("Reading Score")
+ax4.set_ylabel("Number of Students")
+st.pyplot(fig4)
+
 st.subheader("Top Performing Students")
 
 top_students = data.sort_values(by='math_score', ascending=False).head(5)
