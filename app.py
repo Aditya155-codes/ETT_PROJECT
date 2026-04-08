@@ -68,6 +68,20 @@ ax6.set_xlabel("Reading Score")
 ax6.set_ylabel("Writing Score")
 st.pyplot(fig6)
 
+st.subheader("Score Distribution (Box Plot)")
+
+fig7, ax7 = plt.subplots()
+ax7.boxplot([data['math_score'], data['reading_score'], data['writing_score']],
+            labels=['Math', 'Reading', 'Writing'])
+st.pyplot(fig7)
+
+st.subheader("Average Score Contribution")
+
+fig8, ax8 = plt.subplots()
+ax8.pie(avg_scores, labels=avg_scores.index, autopct='%1.1f%%')
+ax8.set_title("Average Score Distribution")
+st.pyplot(fig8)
+
 st.subheader("Top Performing Students")
 
 top_students = data.sort_values(by='math_score', ascending=False).head(5)
