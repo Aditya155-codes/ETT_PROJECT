@@ -37,6 +37,13 @@ ax2.set_xlabel("Attendance")
 ax2.set_ylabel("Number of Students")
 st.pyplot(fig2)
 
+st.subheader("Gender Distribution (Pie Chart)")
+
+fig3, ax3 = plt.subplots()
+ax3.pie(gender_counts, labels=gender_counts.index, autopct='%1.1f%%', startangle=90)
+ax3.set_title("Gender Distribution")
+st.pyplot(fig3)
+
 st.subheader("Top Performing Students")
 
 top_students = data.sort_values(by='math_score', ascending=False).head(5)
